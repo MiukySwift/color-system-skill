@@ -4,8 +4,8 @@ description: Generate either a complete Light/Dark color system from role seeds 
 metadata:
   group: med
   manager: miuky
-  version: "2.0.1"
-  release_notes: "Improve the accuracy and clarity of written descriptions."
+  version: "2.0.2"
+  release_notes: "Repackage the skill from its standalone source repository; generation behavior is unchanged."
   command_only: false
 ---
 
