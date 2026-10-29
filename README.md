@@ -19,6 +19,17 @@ python3 scripts/color_system.py validate /path/to/color-system.json
 
 The seeds JSON must contain `brand`, `neutral`, `error`, and `success` colors as `#RRGGBB`; `link` is optional. For single-color operation, see `references/single-color.md`.
 
+## Installation
+
+Keep `SKILL.md`, `agents/`, `references/`, and `scripts/` together in your AI tool's skill directory. For Codex on macOS/Linux, you can link this checkout by running from the repository root:
+
+```bash
+mkdir -p "$HOME/.agents/skills"
+ln -s "$PWD" "$HOME/.agents/skills/color-system"
+```
+
+If an entry already exists, inspect its target before replacing it. Claude Code can use the same checkout through `~/.claude/skills/color-system`. Keep one active installation per tool and keep the checkout at a stable location. Restart the tool after changing installation or configuration; start a new session after editing skill instructions.
+
 ## Test
 
 ```bash
@@ -29,10 +40,6 @@ node tests/test_figma_palette.cjs
 
 The Python tests also exercise the Figma bridge mock through Node.js. No live Figma write is performed by these tests.
 
-## Release workflow
+## License
 
-This repository is the development source of the skill. After verifying a change, update the version and release notes in `SKILL.md`, commit the change, and tag the release. Configure distinct `github` and `gitee` Git remotes; push the same tag to either or both as needed. Do not use a blind `git push --all` for a selective release.
-
-The company's Skill Market package (`med/color-system`) is a separate distribution channel. Releasing a Git tag does **not** update that package or its versioned TGZ download link. Publish a new package through the authorized Skill Market process before updating documentation to claim a new marketplace version.
-
-No license is granted by this repository unless a LICENSE file is added. Confirm redistribution rights and review the contents before making a remote repository public.
+No license is granted by this repository unless a LICENSE file is added.
