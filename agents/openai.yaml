@@ -1,0 +1,4 @@
+interface:
+  display_name: "color-system"
+  short_description: "Generate color systems or palettes with text/fill contrast"
+  default_prompt: "Use $color-system to choose a full color system or a single-color palette, collect the required colors, and create either full-system Variables and a System Guide or a canvas-only single-color palette with white, black, and fixed-seed text/fill contrast checks and no Variables."
